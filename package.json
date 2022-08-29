@@ -1,0 +1,77 @@
+{
+  "name": "electron-vue-vite",
+  "version": "2.0.0",
+  "main": "dist/electron/main/index.js",
+  "description": "Electron + Vue3 + Vite3 + UnoCSS + TS",
+  "packageManager": "pnpm@6.32.3",
+  "author": "mohen",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build && electron-builder",
+    "lint": "eslint --ext .js,.jsx,.vue,.ts,.tsx src",
+    "typecheck": "vue-tsc --noEmit",
+    "preview": "vite preview",
+    "test": "vitest",
+    "prepare": "husky install"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.25.2",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@iconify-json/carbon": "^1.1.7",
+    "@types/node": "^17.0.45",
+    "@unocss/reset": "^0.27.6",
+    "@vitejs/plugin-vue": "^3.0.1",
+    "@vue/test-utils": "^2.0.2",
+    "@vueuse/core": "^8.9.4",
+    "electron": "^20.0.2",
+    "electron-builder": "^23.3.3",
+    "eslint": "^8.22.0",
+    "husky": ">=8.0.1",
+    "jsdom": "^19.0.0",
+    "lint-staged": "^12.5.0",
+    "typescript": "^4.7.4",
+    "unocss": "^0.27.6",
+    "unplugin-auto-import": "^0.11.2",
+    "unplugin-vue-components": "^0.22.4",
+    "vite": "^3.0.8",
+    "vite-plugin-dynamic-import": "^1.1.1",
+    "vite-plugin-electron": "^0.9.1",
+    "vitest": "^0.6.3",
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.4",
+    "vue-tsc": "^0.40.1"
+  },
+  "debug": {
+    "env": {
+      "VITE_DEV_SERVER_HOST": "127.0.0.1",
+      "VITE_DEV_SERVER_PORT": 3344,
+      "VITE_DEV_SERVER_URL": "http://127.0.0.1:3344"
+    }
+  },
+  "keywords": [
+    "electron",
+    "rollup",
+    "vite3",
+    "vue3",
+    "vue",
+    "UnoCSS"
+  ],
+  "eslintConfig": {
+    "extends": "@antfu",
+    "rules": {
+      "no-console": "off",
+      "no-undef": "off"
+    }
+  },
+  "lint-staged": {
+    "*.{vue,ts,tsx}": [
+      "npm run lint"
+    ]
+  }
+}
